@@ -19,7 +19,7 @@ const Home = ({ categories }) => (
     </section>
 )
 
-Home.prototype = {
+Home.propTypes = {
     categories: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number,

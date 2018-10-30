@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 const Category = props => (
     <div>
-        <h1>Category : {props.categoryName}</h1>
+      {props.category
+        ? <h1>Category : {props.category.title}</h1>
+        : <p>loading ...</p>
+      }
     </div>
 )
 

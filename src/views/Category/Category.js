@@ -11,7 +11,7 @@ const Category = ({ categoryName, categories }) => (
             <h2>Categories:</h2>
             <ul>
                 {
-                    categories && categories.length > 0 && (
+                    categories.length > 0 && (
                         <section>
                             {
                                 categories.map(category => (

@@ -3,7 +3,8 @@ import Category from './Category';
 
 export class CategoryContainer extends Component {
     state = {
-        categoryData: {}
+        categoryData: {},
+        categories: []
     }
     componentDidMount() {
         fetch(`http://jservice.io/api/category?id=${this.props.match.params.id}`)

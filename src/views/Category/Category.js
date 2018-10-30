@@ -15,7 +15,9 @@ const Category = ({ categoryName, categories }) => (
                         <section>
                             {
                                 categories.map(category => (
-                                    <Link key={category.id} to={'/categories/'+category.id}>{category.title}</Link>
+                                    <li key={category.id}>
+                                        <Link to={'/categories/'+category.id}>{category.title}</Link>
+                                    </li>
                                 ))
                             }
                         </section>
@@ -27,7 +29,14 @@ const Category = ({ categoryName, categories }) => (
 )
 
 Category.prototypes = {
-    categoryName: PropTypes.string.isRequired
+    categoryName: PropTypes.string.isRequired,
+    categories: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number,
+            title: PropTypes.string,
+            clues_count: PropTypes.number
+        })
+    )
 }
 
 export default Category

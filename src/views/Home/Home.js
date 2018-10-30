@@ -8,13 +8,11 @@ const Home = ({ categories }) => (
         <ul>
             {
                 categories.length > 0 && (
-                    <section>
-                        {
-                            categories.map(category => (
-                                <Link key={category.id} to={'/categories/'+category.id}>{category.title}</Link>
-                            ))
-                        }
-                    </section>
+                    categories.map(category => (
+                        <li key={category.id}>
+                            <Link to={'/categories/'+category.id}>{category.title}</Link>
+                        </li>
+                    ))
                 )
             }
         </ul>

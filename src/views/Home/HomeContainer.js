@@ -1,31 +1,27 @@
 import React, { Component } from 'react';
 import Home from './Home';
+import api from '../../helpers/api'
 
 class HomeContainer extends Component {
 
-    state = {
-        categories: []
-    }
+  state = {
+    categories: []
+  }
 
-    componentDidMount() {
-        fetch('http://jservice.io/api/categories?count=100')
-            .then(response => {
-                response.json().then(categories => {
-                    console.log(categories);
-                    this.setState({
-                        categories
-                    })
-                })
-            })
-    }
+  async componentDidMount() {
+    const data = await api.getCategories(10)
+    this.setState({
+      categories: data
+    })
+  }
 
-    render() {
-        return (
-            <Home
-                categories={this.state.categories}
-            />
-        );
-    }
+  render() {
+    return (
+      <Home
+        categories={this.state.categories}
+      />
+    );
+  }
 }
 
 export default HomeContainer;

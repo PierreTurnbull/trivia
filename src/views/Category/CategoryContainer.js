@@ -13,7 +13,6 @@ export class CategoryContainer extends Component {
     })
   }
   render() {
-    console.log(this.state.categoryData.title, this.state.categoryData.clues)
     return (
       <div>
         <Category
